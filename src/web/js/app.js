@@ -1,3 +1,5 @@
+var token = '100-64symbols-token-contain-a-z-A-Z-0-9-_';
+
 $(function () {
     var $res = $('#result1');
 
@@ -11,7 +13,7 @@ $(function () {
         $.ajax({
             url: url,
             headers: {
-                'Authorization': 'Bearer 100-token',
+                'Authorization': 'Bearer ' + token,
             },
         })
             .done(function (data) {
@@ -50,7 +52,7 @@ $(function () {
             data: params,
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer 100-token',
+                'Authorization': 'Bearer ' + token,
             },
         })
             .done(function (data) {

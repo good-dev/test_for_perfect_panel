@@ -80,6 +80,7 @@ class Currency
             return in_array($ID, $currencies);
         }, ARRAY_FILTER_USE_KEY);
     }
+    
 
     /**
      * Get all or selected rates
@@ -106,6 +107,7 @@ class Currency
 
         return (object)$outputRates;
     }
+
 
     /**
      * @param string $currencyFrom 

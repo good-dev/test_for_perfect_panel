@@ -10,16 +10,17 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     public $authKey;
     public $accessToken;
 
+    
     private static $users = [
         '100' => [
             'id' => '100',
             'username' => 'admin',
-            'accessToken' => '100-token',
+            'accessToken' => '100-64symbols-token-contain-a-z-A-Z-0-9-_',
         ],
         '101' => [
             'id' => '101',
             'username' => 'demo',
-            'accessToken' => '101-token',
+            'accessToken' => '101-another-64symbols-token-contain-a-z-A-Z-0-9-_',
         ],
     ];
 
