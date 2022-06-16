@@ -1,0 +1,33 @@
+version: '2.4'
+
+services:
+    web:
+        image: nginx:stable-alpine
+
+        environment:
+            TZ: Europe/Moscow
+
+        volumes:
+            - ./dev.conf:/etc/nginx/conf.d/dev.conf
+            - ./src:/var/www
+
+        links:
+            - php
+        expose:
+            - "8080"
+        ports:
+            - "${PORT_ON_LOCALHOST}:8080"
+
+        container_name: ${COMPOSE_PROJECT_NAME}-web
+        restart: always
+
+    php:
+        build: .
+        image: php8:test_for_pp
+
+        environment:
+            TZ: Europe/Moscow
+        volumes:
+            - ./src:/var/www
+        container_name: ${COMPOSE_PROJECT_NAME}-php
+        restart: always
