@@ -1,1 +1,1 @@
-chmod 777 src/runtime
+chmod 777 src/runtime src/web/assets
